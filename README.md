@@ -41,7 +41,7 @@ cd ../backend
 npm install
 
 3.Start the NestJS backend server:
-npm run start
+npm run start:dev
 The backend API will be available at http://localhost:3000.
 
 ## API Endpoints
