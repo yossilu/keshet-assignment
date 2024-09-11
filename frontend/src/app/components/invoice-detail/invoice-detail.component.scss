@@ -1,0 +1,194 @@
+.invoice-details {
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-color: beige;
+    border: 0.5px solid beige;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.7);
+
+    .export-icon {
+        position: absolute;
+        // top: 20px;
+        right: 20px;
+        font-size: 30px;
+        cursor: pointer;
+        bottom: 20px;
+        color: rgb(141, 100, 100);
+        
+        &:hover {
+          color: darkred;
+        }
+      }
+
+    .details-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 80px;
+        padding: 20px 80px;
+        background-color: rgb(233, 233, 189);
+
+        .invoice-title {
+            font-size: 35px;
+        }
+
+        .invoice-logo {
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            height: 100%;
+            width: 150px;
+
+            img {
+                width: 75px;
+            }
+        }
+    }
+
+    .invoice-personals {
+        padding: 10px 80px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 20px;
+        flex-grow: 1;
+
+        .personals-data {
+            width: 60%;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+
+        .date-and-id {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-end;
+        }
+    }
+
+    .invoice-amount-description {
+        padding: 10px 80px;
+        margin-top: 20px;
+        flex-grow: 1;
+
+        .amount-desc-header {
+            background-color: rgb(233, 233, 189);
+            display: grid;
+            grid-template-columns: 4fr 1fr 1fr 1fr;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .amount-desc-list {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            min-height: 30px;
+
+            overflow-y: auto;
+            max-height: 200px;
+
+            .invoice-item {
+                display: grid;
+                grid-template-columns: 4fr 1fr 1fr 1fr;
+                padding: 10px 0;
+                border-bottom: 1px solid #ccc;
+            }
+        }
+
+        .amount-desc-footer {
+            padding: 10px;
+            background-color: rgb(233, 233, 189);
+            font-weight: bold;
+            text-align: right;
+
+            p {
+                margin: 0;
+            }
+        }
+    }
+
+    .invoice-payment-method {
+        padding: 10px 80px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-grow: 1;
+        gap: 20px;
+        /* Allows the section to grow and fill available space */
+
+        .payment-method {
+            width: calc(40% - 20px);
+        }
+
+        .notes {
+            width: 60%;
+            display: flex;
+            flex-direction: row;
+            gap: 5px;
+            textarea {
+                width: 100%;
+                height: 80px;
+                border: 1px solid #ccc;
+                padding: 10px;
+                font-family: inherit;
+            }
+        }
+    }
+
+    .invoice-signature {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 80px;
+        flex-grow: 1;
+
+        p{
+            margin: 0;
+        }
+      
+        .name,
+        .signature {
+          width: 30%;
+
+          p {
+            display: flex;
+            align-self: center;
+            justify-content: center;
+            text-align: center;
+          }
+        }
+      
+        .ty {
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          text-align: center;
+          width: auto; 
+        }
+      }
+
+    .invoice-footer {
+        height: 70px;
+        padding: 10px 80px;
+        text-align: center;
+        background-color: rgb(233, 233, 189);
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+    }
+}

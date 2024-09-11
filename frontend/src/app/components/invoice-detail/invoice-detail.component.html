@@ -1,0 +1,100 @@
+<div *ngIf="invoice$ | async as invoice" class="invoice-details" #invoiceDetails>
+  <div #exportButton>
+    <mat-icon class="export-icon" (click)="exportToPDF()" aria-label="Export to PDF">
+      picture_as_pdf
+    </mat-icon>
+  </div>
+
+  <div class="details-header">
+    <div class="invoice-title">
+      <h2>Invoice #{{ invoice.id }}</h2>
+    </div>
+    <div class="invoice-logo">
+      <img src="/rendition.png" alt="Invoice Logo">
+    </div>
+  </div>
+
+  <!-- Invoice Personals -->
+  <div class="invoice-personals">
+    <div class="personals-data">
+      <div class="to">
+        <p><strong>To:</strong></p>
+        <p>{{ invoice.customerName }}</p>
+        <p>{{ invoice.customerAddress }}</p>
+      </div>
+
+      <div class="from">
+        <p><strong>From:</strong></p>
+        <p>Your Company</p>
+        <p>Your Address</p>
+      </div>
+    </div>
+
+    <div class="date-and-id">
+      <p><strong>Invoice Date:</strong> {{ invoice.date }}</p>
+      <p><strong>Invoice ID:</strong> {{ invoice.id }}</p>
+    </div>
+  </div>
+
+  <div class="invoice-amount-description">
+    <div class="amount-desc-header">
+      <div>Description</div>
+      <div>Hours</div>
+      <div>Price</div>
+      <div>Total</div>
+    </div>
+
+    <div class="amount-desc-list">
+      <div class="invoice-item">
+        <!-- should be a list of invoice.items -->
+        <div>{{ invoice.description }}</div>
+        <div>{{ invoice.hours }}</div>
+        <div>{{ invoice.amount | currency:'ILS' }}</div>
+        <div>{{ invoice.amount | currency:'ILS' }}</div>
+      </div>
+    </div>
+
+    <div class="amount-desc-footer">
+      <p><strong>Total Amount:</strong> {{ invoice.amount | currency:'ILS' }}</p>
+    </div>
+  </div>
+
+  <!-- Payment Method and Notes -->
+  <div class="invoice-payment-method">
+    <div class="payment-method">
+      <p><strong>Payment Method:</strong> {{ invoice.paymentMethod }}</p>
+    </div>
+
+    <div class="notes">
+      <p><strong>Notes:</strong></p>
+      <!-- <textarea rows="3"></textarea> can be used to actually add data--> 
+      <div class="notes-rows">
+        <p>_________________________</p>
+        <p>_________________________</p>
+        <p>_________________________</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="invoice-signature">
+    <div class="name">
+      <p><strong>Name:</strong></p>
+      <p>{{ invoice.customerName }}</p>
+    </div>
+
+    <div class="ty">
+      <p><strong>Thank You!</strong></p>
+    </div>
+
+    <div class="signature">
+
+      <p>_________________________</p>
+      <p class="sign-text"><strong>Signature</strong></p>
+    </div>
+  </div>
+
+  <div class="invoice-footer">
+    <p><strong>Company Website:</strong> <a href="https://yourcompany.com">yourcompany.com</a></p>
+  </div>
+</div>

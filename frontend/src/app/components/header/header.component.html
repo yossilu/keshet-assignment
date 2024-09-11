@@ -1,0 +1,63 @@
+<div class="header-container">
+  <!-- Left: User Profile Icon -->
+  <div class="header-left">
+    <mat-icon class="profile-icon">person</mat-icon>
+  </div>
+
+  <div class="header-middle">
+    <div class="toggle-buttons">
+      <mat-icon class="toggle-icon split-screen-icon" (click)="toggleHalfView()" aria-label="Half Screen View">
+        view_quilt
+      </mat-icon>
+    
+      <mat-icon class="toggle-icon full-screen-icon" (click)="toggleFullView()" aria-label="Full Screen View">
+        menu
+      </mat-icon>
+    </div>
+    
+
+    <div class="search-and-date">
+      <div class="reset-button">
+        <mat-icon mat-icon-button (click)="resetFilters()">filter_alt</mat-icon>
+      </div>
+
+      <div class="search-field">
+        <mat-icon class="search-icon">search</mat-icon>
+        <input type="text"  placeholder="חפש" [value]="(searchText$ | async) ?? ''" (input)="onSearchChange($event)" />
+      </div>
+
+      <div class="date-field">
+        <input type="date" [value]="(startDate$ | async) ?? ''" (change)="onStartDateChange($event)"
+          placeholder="מתאריך" />
+        <span> - </span>
+        <input type="date" [value]="(endDate$ | async) ?? ''" (change)="onEndDateChange($event)"
+          placeholder="עד תאריך" />
+      </div>
+    </div>
+
+    <!-- Invoice Statistics -->
+    <div class="data-summary">
+      <div class="summary-item">
+        <div class="invoice-numbers">{{ totalInvoices }}</div>
+        <div class="invoice-text">סה"כ</div>
+      </div>
+      <div class="summary-item">
+        <div class="invoice-numbers">{{ paidInvoices }}</div>
+        <div class="invoice-text">שולמו</div>
+      </div>
+      <div class="summary-item">
+        <div class="invoice-numbers">{{ inProcessInvoices }}</div>
+        <div class="invoice-text">בתהליך</div>
+      </div>
+      <div class="summary-item">
+        <div class="invoice-numbers">{{ unpaidInvoices }}</div>
+        <div class="invoice-text">טרם שולמו</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right: Company Logo -->
+  <div class="header-right">
+    <img src="/keshetLogo.png" alt="Logo" class="logo" />
+  </div>
+</div>

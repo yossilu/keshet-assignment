@@ -1,0 +1,46 @@
+<div class="invoice-container" [ngClass]="{ 'half-view': !(isFullView$ | async), 'full-view': isFullView$ | async }">
+
+  <div class="invoice-detail-container" *ngIf="!(isFullView$ | async)">
+    <div class="router-outlet-wrapper">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+  <div class="invoice-list-container">
+    <div class="invoice-header">
+      <div class="header-item">עלות</div>
+      <div class="header-item">ספק</div>
+      <div class="header-item">תיאור הוצאה</div>
+      <div class="header-item status"></div>
+    </div>
+
+    <section class="invoice-list">
+      <ul>
+        <li *ngFor="let invoice of (filteredInvoices$ | async)" class="invoice-item"
+          (click)="selectInvoice(invoice.id)">
+          <div class="invoice-amount">
+            {{ invoice.amount | currency:'ILS' }}
+          </div>
+          <div class="invoice-provider">
+            {{ invoice.invoiceProvider }}
+          </div>
+          <div class="invoice-description">
+            {{ invoice.description }} <br>
+            <span class="invoice-date">{{ invoice.date }}</span>
+          </div>
+          <div class="invoice-status">
+            <mat-icon class="status-icon" *ngIf="invoice.status === 'Paid'"
+              style="color: green;">check_circle</mat-icon>
+            <mat-icon class="status-icon" *ngIf="invoice.status === 'Overdue'" style="color: red;">cancel</mat-icon>
+            <mat-icon class="status-icon" *ngIf="invoice.status === 'Pending'"
+              style="color: orange;">schedule</mat-icon>
+            <mat-icon class="status-icon" *ngIf="!invoice.status" style="color: grey;">radio_button_unchecked</mat-icon>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+
+
+</div>

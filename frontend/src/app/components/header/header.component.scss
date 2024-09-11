@@ -1,0 +1,238 @@
+/* Main Header Container */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f0f0; /* You can change the background color */
+    padding: 20px;
+    position: relative;
+    height: 90px;
+    background-color: #297cf8;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 2px #888888
+  }
+  
+  /* Profile Icon on the Left */
+  .header-left {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    max-width: 50px;
+    max-height: 50px;
+    display: flex;
+
+    .profile-icon {
+      background-color: white;
+      color: #007bff;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .header-middle {
+    left: 0;
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    box-sizing: border-box;
+    height: 80px;
+
+    .reset-button {
+      margin-right: 10px;
+  
+      mat-icon {
+        color: black;
+        &:hover {
+          cursor: pointer;
+          background-color: #f0f0f0; /* Slight hover effect */
+        }
+      }
+  
+      
+    }
+  }
+  
+  .profile-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  
+  .header-right {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+  }
+  
+  .logo {
+    height: 50px;
+    width: auto;
+  }
+  
+  .header-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    position: relative;
+    width: 100%;
+  }
+  
+  /* Container for 3 Divs */
+  .central-div {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Space between the divs */
+    margin-top: 100px; /* Space from the top */
+  }
+  
+  .sub-div {
+    background-color: #ffffff; /* Light background */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    width: 100px;
+    text-align: center;
+  }
+  
+
+  .toggle-buttons {
+    position: absolute;
+    left: 10px;
+    padding: 7px;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    // gap: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+    background-color: #ffffff;
+    // height: auto;
+    height: 70px;
+
+    .toggle-icon {
+      display: flex;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 28px;
+      transition: transform 0.2s ease-in-out;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+    
+    .split-screen-icon {
+
+      &:hover {
+        content: "dashboard";
+      }
+      
+    }
+    
+    .full-screen-icon:hover {
+      content: "fullscreen"; 
+    }
+    
+    .split-screen-icon {
+      content: "view_quilt";
+    }
+    
+    .full-screen-icon {
+      content: "menu";
+    }
+  }
+  
+  button {
+    min-width: 120px;
+  }
+  
+  .search-and-date {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    // height: 80px;
+    background-color: #ffffff;
+    box-shadow: 2px 2px 2px #888888;
+    padding: 10px 15px;
+  }
+  
+  .date-field {
+    border-radius: 8px;
+    padding: 6px;
+    text-align: right;
+    border: 1px solid black;
+
+    input {
+      border-width: 1px;
+      border-width: 0px;
+      text-align: right;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .search-field {
+    display: flex;
+    flex-direction: row;
+    border-radius: 8px;
+    padding: 5px;
+    text-align: right;
+    border: 1px solid black;
+
+    .search-icon {
+      margin-right: 8px;
+      font-size: 24px; 
+      color: gray;
+    }
+    
+    input {
+      display: flex;
+      flex-direction: row;
+      align-self: center;
+      border-width: 1px;
+      border-width: 0px;
+      text-align: right;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  
+  .data-summary {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #ffffff;
+    box-shadow: 2px 2px 2px #888888;
+  }
+  
+  .summary-item {
+    display: flex;
+    flex-direction: column;
+    border-right: #888888 1px solid;
+    color: black;
+    padding: 10px;
+    padding-right: 40px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+
+    .invoice-text {
+      font-size: 10px;
+    }
+
+    &:last-child {
+      border: 0px;
+      padding: 0;
+    }
+  }
+  
