@@ -24,7 +24,7 @@ This project is an **Invoice Management System** built with **Angular 18** for t
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/invoice-management-system.git
+   git clone https://github.com/yossilu/invoice-management-system.git
    cd invoice-management-system/frontend
 2. Install dependencies:
     npm install
